@@ -21,18 +21,29 @@ window.onload=function(){
         let liArrayUl = liArrayFull.filter(x=>{
               return  x.childNodes.length !=1;
         });
-//change css style for some advance
-        // liArrayUl.forEach(x=>{
-        //         // x.style.transform = "translateX(-1000px)";
-        //         x.style.opacity = "0.1"
-        //         x.style.transition = "transform ease 0.5s,opacity ease 3s"
-        // });
-//change css style for some advance
-        Array.from(h3).forEach(x=>{
-                // x.style.transform = "translateX(-1000px)";
-                x.style.opacity = "0.1"
-                x.style.transition = "transform ease 0.5s,opacity ease 3s"
-        });
+
+//apper text if window.height enough
+liArrayUl.forEach(x=>{
+        let LiSourceBottom = x.getBoundingClientRect().top + window.pageYOffset -650 ;
+        if (window.pageYOffset < LiSourceBottom){
+               
+            }else if (window.pageYOffset > LiSourceBottom){
+                x.style.transform = "translateX(0px)";
+                x.style.opacity = "1";
+                
+            }
+})
+Array.from(h3).forEach(x=>{
+        let h3SourceBottom = x.getBoundingClientRect().top + window.pageYOffset -650;
+        if (window.pageYOffset < h3SourceBottom){
+               
+        }else if (window.pageYOffset > h3SourceBottom){
+            x.style.transform = "translateX(0px)";
+            x.style.opacity = "1";
+
+        }
+})
+
 // onscroll for text appearing on the page
       window.onscroll = function(){
         Array.from(h3).forEach(x=>{
@@ -42,18 +53,15 @@ window.onload=function(){
                 }else if (window.pageYOffset > h3SourceBottom){
                     x.style.transform = "translateX(0px)";
                     x.style.opacity = "1";
-                    
                 }
         })
          liArrayUl.forEach(x=>{
                 let LiSourceBottom = x.getBoundingClientRect().top + window.pageYOffset -650 ;
-                console.log(LiSourceBottom)
                 if (window.pageYOffset < LiSourceBottom){
                        
                     }else if (window.pageYOffset > LiSourceBottom){
                         x.style.transform = "translateX(0px)";
                         x.style.opacity = "1";
-                        
                     }
         })
       }
@@ -65,7 +73,6 @@ window.onload=function(){
                     h2Footer.innerText = "Bye!!";
             } else{
                     h2Footer.innerHTML = "Thank you <br> for your <br> interest in <br> my resume:D";
-
             }
         })
     })
@@ -89,9 +96,6 @@ window.onload=function(){
         h1.style.color = "black";
         h2.style.color = "black";
 	}
-       
-       
-        
 }
 
 
