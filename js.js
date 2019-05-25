@@ -36,7 +36,7 @@ window.onload=function(){
 // onscroll for text appearing on the page
       window.onscroll = function(){
         Array.from(h3).forEach(x=>{
-                let h3SourceBottom = x.getBoundingClientRect().bottom + window.pageYOffset -450;
+                let h3SourceBottom = x.getBoundingClientRect().top + window.pageYOffset -650;
                 if (window.pageYOffset < h3SourceBottom){
                        
                 }else if (window.pageYOffset > h3SourceBottom){
@@ -46,7 +46,8 @@ window.onload=function(){
                 }
         })
          liArrayUl.forEach(x=>{
-                let LiSourceBottom = x.getBoundingClientRect().bottom + window.pageYOffset -450;
+                let LiSourceBottom = x.getBoundingClientRect().top + window.pageYOffset -650 ;
+                console.log(LiSourceBottom)
                 if (window.pageYOffset < LiSourceBottom){
                        
                     }else if (window.pageYOffset > LiSourceBottom){
