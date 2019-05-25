@@ -67,6 +67,9 @@ h3 {
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: 0.15em;
+  transform: translateX(1200px);
+  opacity: 0.1;
+  transition:transform ease 0.5s,opacity ease 3s;
 }
 h4 {
   font-size: 1.125rem;
@@ -108,6 +111,11 @@ ol {
 }
 li {
   list-style: none outside none;
+}
+.timeline>li{
+  transform: translateX(-1000px);
+  opacity: 0.1;
+  transition: transform ease 0.5s,opacity ease 3s;
 }
 ul > li:before {
   content: "●";

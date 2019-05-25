@@ -3,26 +3,78 @@ window.onload=function(){
     let pageBorder = document.getElementById("pageBorder");
     let h1 = document.getElementsByTagName("h1")[0];
     let h2 = document.getElementsByTagName("h2")[0];
+    let h3 = document.getElementsByTagName("h3");
     let h2Footer = document.getElementsByTagName("h2")[1];
     let footer = document.getElementsByTagName("footer");
+    let timeline = document.getElementsByClassName("timeline");
+    let liArray = [];
+// get all li on page
+    Array.from(timeline).forEach(x=>{
+            let li = Array.from(x.getElementsByTagName("li")).forEach(z=>{
+                    liArray.push(z);
+            });
+                liArray.push(li);
+    })
+//remove undefined
+      let liArrayFull = liArray.filter(x=>x!==undefined);
+//remove li without ul
+        let liArrayUl = liArrayFull.filter(x=>{
+              return  x.childNodes.length !=1;
+        });
+//change css style for some advance
+        // liArrayUl.forEach(x=>{
+        //         // x.style.transform = "translateX(-1000px)";
+        //         x.style.opacity = "0.1"
+        //         x.style.transition = "transform ease 0.5s,opacity ease 3s"
+        // });
+//change css style for some advance
+        Array.from(h3).forEach(x=>{
+                // x.style.transform = "translateX(-1000px)";
+                x.style.opacity = "0.1"
+                x.style.transition = "transform ease 0.5s,opacity ease 3s"
+        });
+// onscroll for text appearing on the page
+      window.onscroll = function(){
+        Array.from(h3).forEach(x=>{
+                let h3SourceBottom = x.getBoundingClientRect().bottom + window.pageYOffset -450;
+                if (window.pageYOffset < h3SourceBottom){
+                       
+                }else if (window.pageYOffset > h3SourceBottom){
+                    x.style.transform = "translateX(0px)";
+                    x.style.opacity = "1";
+                    
+                }
+        })
+         liArrayUl.forEach(x=>{
+                let LiSourceBottom = x.getBoundingClientRect().bottom + window.pageYOffset -450;
+                if (window.pageYOffset < LiSourceBottom){
+                       
+                    }else if (window.pageYOffset > LiSourceBottom){
+                        x.style.transform = "translateX(0px)";
+                        x.style.opacity = "1";
+                        
+                    }
+        })
+      }
+// change text by clicking on footer
     Array.from(footer).forEach(x=>{
-            x.addEventListener("click",(x)=>{
-                let footerTarget = x.target;
-                console.log(footerTarget)
+            x.addEventListener("click",()=>{
                 let h2FooterLowerCase = h2Footer.innerText.toLowerCase();
             if(h2FooterLowerCase !== "bye!!"){
                     h2Footer.innerText = "Bye!!";
             } else{
                     h2Footer.innerHTML = "Thank you <br> for your <br> interest in <br> my resume:D";
-                    console.log("?")
+
             }
         })
     })
+// move text by mousemove
     h2.addEventListener("mousemove", (x)=>{
             let h2MouseX = x.offsetX;
             h2.style.marginLeft = `${h2MouseX/2}` + "px";
             h2.style.letterSpacing = `${((h2MouseX+500)/500)-0.75}` + "em"
     })
+//hover effect on avatar and border page
     avatarHover.onmouseover = function(){
         avatarHover.style.cursor = "pointer";
         pageBorder.style.borderColor = '#f00';
