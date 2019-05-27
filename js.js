@@ -80,7 +80,8 @@ Array.from(h3).forEach(x=>{
     h2.addEventListener("mousemove", (x)=>{
             let h2MouseX = x.offsetX;
             h2.style.marginLeft = `${h2MouseX/2}` + "px";
-            h2.style.letterSpacing = `${((h2MouseX+500)/500)-0.75}` + "em"
+            h2.style.letterSpacing = `${((h2MouseX+500)/500)-0.75}` + "em";
+            h2.style.cursor = 'pointer'
     })
 //hover effect on avatar and border page
     avatarHover.onmouseover = function(){

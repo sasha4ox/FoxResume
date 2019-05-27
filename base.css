@@ -68,7 +68,7 @@ h3 {
   font-size: 1.25rem;
   letter-spacing: 0.15em;
   transform: translateX(1200px);
-  opacity: 0.1;
+  opacity: 0;
   transition:transform ease 0.5s,opacity ease-in 1s;
 }
 h4 {
@@ -114,7 +114,7 @@ li {
 }
 .timeline>li{
   transform: translateX(-1000px);
-  opacity: 0.1;
+  opacity: 0;
   transition: transform ease 0.5s,opacity ease-in 1s;
 }
 ul > li:before {
