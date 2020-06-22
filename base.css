@@ -69,7 +69,7 @@ h3 {
   letter-spacing: 0.15em;
   transform: translateX(1200px);
   opacity: 0;
-  transition:transform ease 0.5s,opacity ease-in 1s;
+  transition: transform ease 0.5s, opacity ease-in 1s;
 }
 h4 {
   font-size: 1.125rem;
@@ -102,7 +102,8 @@ strong {
 small {
   font-size: 80%;
 }
-ul, ol {
+ul,
+ol {
   list-style: none outside none;
   padding-left: 1.5em;
 }
@@ -112,10 +113,10 @@ ol {
 li {
   list-style: none outside none;
 }
-.timeline>li{
+.timeline > li {
   transform: translateX(-1000px);
   opacity: 0;
-  transition: transform ease 0.5s,opacity ease-in 1s;
+  transition: transform ease 0.5s, opacity ease-in 1s;
 }
 ul > li:before {
   content: "●";
@@ -252,7 +253,6 @@ article {
   margin-left: auto;
   margin-right: auto;
 }
-
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   article {
@@ -539,7 +539,6 @@ article {
   flex: 1 0 auto;
 }
 
-
 @media only screen and (max-width: 1199px) {
   .avatar-wrapper {
     padding: 0;
@@ -552,6 +551,11 @@ article {
 @media only screen and (max-width: 767px) {
   .avatar {
     max-width: 15rem;
+  }
+}
+@media print {
+  .avatar {
+    width: 5rem;
   }
 }
 
@@ -752,13 +756,13 @@ li.details > input {
 /* Highlighted list item */
 li.highlighted {
   padding: 0.5em;
-  background: rgba(0,0,0,0.04);
+  background: rgba(0, 0, 0, 0.04);
   border-radius: 4px;
 }
 
 /* Bordered list item */
 li.bordered {
-  border: 1px solid rgba(0,0,0,0.125);
+  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 4px;
   padding: 0.5em;
   transition: all 0.2s linear;
@@ -1011,7 +1015,7 @@ header + main {
 main {
   overflow: auto;
   z-index: 2;
-  background:#ccc;
+  background: #ccc;
   position: relative;
 }
 main:nth-last-child(3) {
