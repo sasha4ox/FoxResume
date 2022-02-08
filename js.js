@@ -1,4 +1,34 @@
-window.onload=function(){
+function onClick() {
+    window.scroll( {
+        top: 1200,
+        behavior: "smooth"
+    } );
+    
+    setTimeout(()=> {
+        window.scroll( {
+            top: 0,
+        } );
+    }, 1000);
+
+    setTimeout(()=> {
+        window.print();
+    }, 2000)
+   
+}
+
+function loadAllpageBeforePrint() {
+    window.scroll( {
+        top: 1200,
+    } );
+    
+    setTimeout(()=> {
+        window.scroll( {
+            top: 0,
+        } );
+    }, 1000);
+}
+
+window.onload = function() {
     let avatarHover = document.getElementById("avatarHover");
     let pageBorder = document.getElementById("pageBorder");
     let h1 = document.getElementsByTagName("h1")[0];
@@ -101,3 +131,4 @@ Array.from(h3).forEach(x=>{
 
 
 
+window.addEventListener("beforeprint", function(event) {loadAllpageBeforePrint()});
