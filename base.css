@@ -175,8 +175,8 @@ sup {
   border: none;
   background: none;
   cursor: pointer;
-  margin: 10px 30px;
-  height: 40px;
+  margin: 5px 30px;
+  height: 10px;
   width: 40px;
 }
 
@@ -624,9 +624,7 @@ article {
   font-size: 0.9em;
   font-weight: 400;
 }
-.contacts__linkedin__printName {
-  display: none;
-}
+
 .contacts li {
   margin-bottom: 0.25rem;
   margin-right: 1em;
@@ -1078,12 +1076,7 @@ footer:hover {
   main:nth-last-child(3) {
     margin-bottom: 0;
   }
-  .contacts {
-    flex-direction: column;
-  }
-  .contacts__linkedin__printName {
-    display: inline;
-  }
+
   .LanguagesFlags {
     display: none;
   }
