@@ -1,18 +1,22 @@
-function onClick() {
-    window.scroll( {
-        top: 1200,
-        behavior: "smooth"
-    } );
+function onClick(isBottom) {
+    console.log(isBottom)
+    const TIME_OUT_BEFORE_PRINT = isBottom ? 0 : 2000;
+    if (!isBottom) {
+        window.scroll( {
+            top: 1200,
+            behavior: "smooth"
+        } );
+        
+        setTimeout(()=> {
+            window.scroll( {
+                top: 0,
+            } );
+        }, 1000);
+    }
     
     setTimeout(()=> {
-        window.scroll( {
-            top: 0,
-        } );
-    }, 1000);
-
-    setTimeout(()=> {
         window.print();
-    }, 2000)
+    }, TIME_OUT_BEFORE_PRINT)
    
 }
 
@@ -31,6 +35,7 @@ function loadAllpageBeforePrint() {
 window.onload = function() {
     let avatarHover = document.getElementById("avatarHover");
     let pageBorder = document.getElementById("pageBorder");
+    const footerId = document.getElementById("footer");
     let h1 = document.getElementsByTagName("h1")[0];
     let h2 = document.getElementsByTagName("h2")[0];
     let h3 = document.getElementsByTagName("h3");
@@ -95,17 +100,11 @@ Array.from(h3).forEach(x=>{
                     }
         })
       }
-// change text by clicking on footer
-    Array.from(footer).forEach(x=>{
-            x.addEventListener("click",()=>{
-                let h2FooterLowerCase = h2Footer.innerText.toLowerCase();
-            if(h2FooterLowerCase !== "bye!!"){
-                    h2Footer.innerText = "Bye!!";
-            } else{
-                    h2Footer.innerHTML = "Thank you <br> for your <br> interest in <br> my resume:D";
-            }
-        })
-    })
+
+footerId.addEventListener('click', () =>{
+    onClick(true);
+})
+
 // move text by mousemove
     h2.addEventListener("mousemove", (x)=>{
             let h2MouseX = x.offsetX;
