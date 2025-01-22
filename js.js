@@ -3,7 +3,7 @@ function onClick(isBottom) {
     const TIME_OUT_BEFORE_PRINT = isBottom ? 0 : 2000;
     if (!isBottom) {
         window.scroll( {
-            top: 1200,
+            top: 5000,
             behavior: "smooth"
         } );
         

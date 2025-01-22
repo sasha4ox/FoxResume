@@ -286,6 +286,7 @@ article {
 }
 
 /* Page */
+@page { size: auto;  margin: 0mm; }
 .page {
   position: relative;
   padding: 3em;
@@ -1079,6 +1080,11 @@ footer:hover {
 
   .LanguagesFlags {
     display: none;
+  }
+  .grid > .intro {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
