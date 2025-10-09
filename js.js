@@ -113,19 +113,19 @@ footerId.addEventListener('click', () =>{
             h2.style.cursor = 'pointer'
     })
 //hover effect on avatar and border page
-    avatarHover.onmouseover = function(){
-        avatarHover.style.cursor = "pointer";
-        pageBorder.style.borderColor = '#f00';
-        avatarHover.setAttribute("data", "./assets/images/avatarHover.svg")
-        h1.style.color = "red";
-        h2.style.color = "red";
-	}
-	avatarHover.onmouseout = function(){
-        pageBorder.style.borderColor = 'midnightblue';
-        avatarHover.setAttribute("data", "./assets/images/avatar.svg")
-        h1.style.color = "black";
-        h2.style.color = "black";
-	}
+    // avatarHover.onmouseover = function(){
+    //     avatarHover.style.cursor = "pointer";
+    //     pageBorder.style.borderColor = '#f00';
+    //     avatarHover.setAttribute("data", "./assets/images/avatarHover.svg")
+    //     h1.style.color = "red";
+    //     h2.style.color = "red";
+	// }
+	// avatarHover.onmouseout = function(){
+    //     pageBorder.style.borderColor = 'midnightblue';
+    //     avatarHover.setAttribute("data", "./assets/images/avatar.svg")
+    //     h1.style.color = "black";
+    //     h2.style.color = "black";
+	// }
 }
 
 

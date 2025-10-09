@@ -547,6 +547,7 @@ article {
   max-width: 15rem;
   display: block;
   flex: 1 0 auto;
+  border-radius: 50%;
 }
 
 @media only screen and (max-width: 1199px) {
